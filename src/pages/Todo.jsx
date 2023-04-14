@@ -69,8 +69,8 @@ const Todo = () => {
   return (
     <> 
     <div>
-        <input name="todo" value={todo} onChange={handleChange} type="text" />
-      <button onClick={createTodo}>추가</button>
+        <input name="todo" value={todo} onChange={handleChange} type="text" data-testid="new-todo-input" />
+      <button data-testid="new-todo-add-button" onClick={createTodo}>추가</button>
       </div>
         <TodoList
           fetchData={fetchData}

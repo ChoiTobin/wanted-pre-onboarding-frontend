@@ -44,6 +44,7 @@ function SignUp() {
         console.log(response);
         if (response.status === 201) {
           navigate("/signin");
+          alert("가입완료")
         }
       });
       setInputs({ email: "", Pw: "" });

@@ -70,21 +70,22 @@ export const TodoList = ({
                 {closeToggle == true && toggle?.[0].id == item.id ? (
                   <>
                     <input
+                    data-testid="modify-input"
                       name="ListTodo"
                       value={ListTodo}
                       onChange={handleChange}
                       type="text"
                     />
-                    <button onClick={() => updateTodo(item)}>제출</button>
-                    <button onClick={() => setCloseToggle(!closeToggle)}>
+                    <button data-testid="submit-button" onClick={() => updateTodo(item)}>제출</button>
+                    <button data-testid="cancel-button" onClick={() => setCloseToggle(!closeToggle)}>
                       취소
                     </button>
                   </>
                 ) : (
                   <>
                     {item.todo}
-                    <button onClick={() => ToggleTodo(item)}>수정</button>
-                    <button onClick={() => deleteTodo(item)}>삭제</button>
+                    <button data-testid="modify-button" onClick={() => ToggleTodo(item)}>수정</button>
+                    <button data-testid="delete-button" onClick={() => deleteTodo(item)}>삭제</button>
                   </>
                 )}
               </LiTag>

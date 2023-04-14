@@ -41,7 +41,9 @@ function SignIn() {
             setInputValue({ email: "", password: "" });
             response.json().then((response) => {
               localStorage.setItem("access_token", response.access_token);
+              alert("로그인완료")
               navigate("/todos");
+              
             });
           }
         }
@@ -63,10 +65,11 @@ function SignIn() {
     <>
       <Container>
         <div>
-        <input name="email" type="email" onChange={onChange} value={email} placeholder="이메일"/>
+        <input data-testid="email-input" name="email" type="email" onChange={onChange} value={email} placeholder="이메일"/>
         </div>
         <div>
         <input
+        data-testid="password-input"
           placeholder="비밀번호"
           name="password"
           type="password"
@@ -74,7 +77,7 @@ function SignIn() {
           value={password}
         />
         </div>
-        <button  disabled={disable} onClick={nextPageHandler}>로그인</button>
+        <button data-testid="signin-button"  disabled={disable} onClick={nextPageHandler}>로그인</button>
         </Container>
     </>
   );
